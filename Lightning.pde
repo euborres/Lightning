@@ -18,8 +18,9 @@ void clouds(){
   strokeWeight(5);
   stroke(171,178,175);
   fill(171,178,175);
-  ellipse(125,0,70,70);
-  ellipse(170,0,70,70);
+  ellipse(120,0,70,70);
+  ellipse(160,0,70,70);
+  ellipse(210,0,70,70);
 }
 
 void draw()
