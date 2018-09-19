@@ -1,17 +1,14 @@
-int startX = 0;
-int startY=150;
-int endX = 0;
-int endY = 150;
-
-int newStartX = 150;
-int newStartY = 0;
-int newEndX = 150;
-int newEndY = 0 ;
-void setup()
-{
-  background(0);
+int startX = 150;
+int startY = 0;
+int endX = 150;
+int endY = 0;
+void setup(){
+  background(51,16,118);
   size(300,300);
+}
+void draw(){
   clouds();
+  lightning();
 }
 
 void clouds(){
@@ -22,48 +19,24 @@ void clouds(){
   ellipse(160,0,70,70);
   ellipse(210,0,70,70);
 }
-
-void draw()
-{
-  clouds();
-  
-
-
-  //background(0);
-  
-/*
-  while(endX < 300){
-    endX = startX + ((int)(Math.random() * 10));
-    endY = startY + ((int)(Math.random() * 19) - 9);
-    line(startX,startY,endX,endY);
-    startX = endX;
-    startY = endY;
-    }
-  */
+void lightning(){
   strokeWeight(5);
-  stroke((int)(Math.random() * 256),(int)(Math.random() * 256),(int)(Math.random() * 256));
-  while(newEndY < 300){
-    newEndX = newStartX + ((int)(Math.random() * 19)-9);
-    newEndY = newStartY + ((int)(Math.random() * 10));
-    line(newStartX, newStartY,newEndX,newEndY);
-    newStartX = newEndX;
-    newStartY = newEndY;
-
-  }  
-   
+  stroke(226,215,247);
+  while(endY < 300){
+   endX = startX + ((int)(Math.random()*19)-9);
+   endY = startY + ((int)(Math.random() * 10));
+   line(startX,startY,endX,endY);
+   startX = endX;
+   startY = endY;
+  }
 }
 
-void mousePressed()
-{
-/*
-  startX = 0;
-  startY=150;
-  endX = 0;
-  endY = 150;
-  */
-  newStartX = 150;
-  newStartY = 0;
-  newEndX = 150;
-  newEndY = 0;
-  background(0);
+void mousePressed(){
+  clouds();
+  startX = 150;
+  startY = 0;
+  endX = 150;
+  endY = 0;
+  background(51,16,118);
+
 }
